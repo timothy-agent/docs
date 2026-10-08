@@ -1,0 +1,20 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/fira-code';
+
+/* Accent values come from the brand tokens in the Timothy web app. */
+:root {
+  --sl-font: 'Inter Variable', system-ui, sans-serif;
+  --sl-font-mono: 'Fira Code Variable', ui-monospace, monospace;
+
+  /* Dark: --brand-soft, --brand, --brand-soft-foreground (.dark) */
+  --sl-color-accent-low: oklch(0.26 0.07 150);
+  --sl-color-accent: oklch(0.806 0.241 147);
+  --sl-color-accent-high: oklch(0.86 0.18 147);
+}
+
+/* Light: --brand-soft, --brand-text, --brand-soft-foreground (:root) */
+:root[data-theme='light'] {
+  --sl-color-accent-low: oklch(0.95 0.05 150);
+  --sl-color-accent: oklch(0.48 0.13 150);
+  --sl-color-accent-high: oklch(0.42 0.12 150);
+}
