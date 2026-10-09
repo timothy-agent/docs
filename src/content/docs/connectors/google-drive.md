@@ -1,0 +1,66 @@
+---
+title: Google Drive
+description: Connect Google Drive so Timothy can search and read your files.
+sidebar:
+  order: 4
+---
+
+The Google Drive connector gives Timothy read-only access to one Google account's Drive. The app describes it as "Search and read files (read-only)".
+
+## What it enables
+
+In chat, the connector adds these tools:
+
+| Tool | What it does |
+|---|---|
+| `search_drive` | Searches file names and, for supported formats, file content. |
+| `read_drive_file` | Reads one file. Google Docs, Sheets and Slides export as text. PDF and Office files are converted to text. Long files are cut short. |
+
+These tools are for chat only. Missions do not get them.
+
+Add the tools to an agent's "Tools allowlist" before you use them. See [Agents](/docs/settings/agents/).
+
+## What you need
+
+Google Drive uses OAuth. You need an OAuth client from Google Cloud:
+
+1. In the Google Cloud console, create an OAuth client of type Web application.
+2. Add Timothy's callback address to its authorized redirect URIs. The add form shows the exact address. It is your Timothy address followed by `/v1/connectors/oauth/callback`.
+3. Copy the client ID and the client secret.
+
+You can use the same OAuth client as your other Google connectors.
+
+The connector asks Google for one scope. The form lists it as `drive.readonly`.
+
+## Add the connector
+
+1. Open Settings, "Connectors", and pick the "Google Drive" tile under "Add a connector".
+2. Fill the form:
+
+   | Field | What to enter |
+   |---|---|
+   | "Name" | A unique name. It identifies this account when more than one connector serves a tool. |
+   | "OAuth client ID" | The client ID from Google Cloud. |
+   | "OAuth client secret" | Choose "New credential" and paste the client secret, or choose "Use existing" to reuse one you already stored. |
+
+3. Press "Save & connect Google". Timothy saves the connector and sends you to Google to consent.
+4. After you consent, Google sends you back to the "Connectors" tab. A banner says the account is connected and asks you to enable it.
+5. Turn on the connector's switch on its card.
+
+## Verify
+
+Press "Test" on the connector's card, or "Test connection" on the connector's page. A working connector shows "Connected as" followed by the account's email address and its scopes.
+
+## Common errors
+
+| Message | What to do |
+|---|---|
+| "Connection failed:" followed by a reason, on the "Connectors" tab | The consent step failed. Check the redirect URI and the client ID, then add the connector again. |
+| "Google authorization expired or was revoked" | Open the connector and press "Reconnect Google account". If your OAuth app is in testing mode, Google expires the grant about once a week. |
+| "google returned no refresh token; remove Timothy's access at myaccount.google.com/permissions and reconnect" | Remove Timothy's access in your Google account, then reconnect. |
+
+## Options on the connector's page
+
+- "Treat as sensitive" moves turns that use this connector to the "Sensitive tool route" set in [Features](/docs/settings/features/).
+- "Reconnect Google account" runs the consent step again.
+- "Delete" removes the connector. Its stored credentials stay in the secret store.
