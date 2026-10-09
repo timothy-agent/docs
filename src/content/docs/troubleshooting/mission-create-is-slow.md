@@ -1,21 +1,23 @@
 ---
 title: Mission create is slow
-description: Why creating a mission can take up to 30 seconds on a slow local model, what to expect, and how to make it faster.
+description: Why the create button can show "Preparing mission…", why a new mission can have no name at first, and how to make naming faster.
 sidebar:
   order: 4
 ---
 
-## "Create mission" or "Run a sample mission" waits a long time
+## The button shows "Preparing mission…"
 
-**What you see:** You click "Create mission" on the new mission page, or "Run a sample mission" in the setup checklist. The button stays greyed out. Nothing seems to happen for up to 30 seconds. Then the mission page opens.
+**What you see:** You click "Create mission" on the new mission page, or "Run a sample mission" in the setup checklist. After 2 seconds the button changes to "Preparing mission…" and stays greyed out. Then the mission page opens.
 
-**Why:** Before Timothy starts a mission, it asks a model for a short name for the mission. It waits up to 30 seconds for that name. A slow local model, or one that is still loading, can use the whole 30 seconds. If no name comes in time, Timothy creates the mission without one and goes on.
+**Why:** Timothy sets up the mission before it opens the page. Most missions are ready in a moment. A coding mission takes longer, because Timothy copies the repository and makes a branch for it. It also waits up to 5 seconds for a short mission name, so it can name the branch after it. If no name comes in time, the branch is named after the goal.
 
-This is a known issue. Follow it in [timothy-agent/timothy#1081](https://github.com/timothy-agent/timothy/issues/1081).
+**What not to do:** Do not reload the page, and do not start the same mission again in another tab. A second try gives you a second mission.
 
-**What to expect:** The wait for the name ends after 30 seconds at most. The mission page then opens and the mission runs as normal.
+## A new mission has no name at first
 
-**What not to do:** Do not reload the page, and do not start the same mission again in another tab. Timothy saves the mission before it asks for the name. A second try gives you a second mission.
+**What you see:** The mission page opens, but the mission has no short name yet. The name shows up a little later.
+
+**Why:** Timothy asks a model for the name after it creates the mission. The mission does not wait for it. When the name arrives, the missions list and the mission page show it without a reload. A slow local model, or one that is still loading, can take up to 30 seconds.
 
 **Fix:** Give the naming step a faster model. Timothy uses the model for summaries to name missions. If that has no route, it uses the chat model.
 

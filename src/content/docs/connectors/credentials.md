@@ -30,7 +30,7 @@ Names can contain letters, digits and the characters `_ . / -`. A name can never
 
 ## The Credentials tab
 
-Settings, "Credentials" lists every stored credential by name, with the providers, connectors, destinations or automations that use it. It never shows the value.
+Settings, "Credentials" lists every stored credential by name, with the providers, connectors, destinations, automations or channels that use it. It never shows the value.
 
 Some credentials are managed by Timothy itself: the OAuth tokens of a Google or Outlook connector, and the signing key of a git connector. A "Use existing" menu lists them but does not let you pick them.
 
@@ -58,7 +58,7 @@ A provider or channel can also switch to a different stored name. On a provider 
 
 ## Delete a credential
 
-Timothy refuses to delete a credential while a provider, connector, destination or automation still uses it. The error names the items that use it. Change or delete those items first.
+Timothy refuses to delete a credential while a provider, connector, destination, automation or channel still uses it. The error names the items that use it. For a channel, it reads "is referenced by channel(s)" followed by the channel names. A disabled channel counts too. Change or delete those items first.
 
 Deleting a connector does not delete its credential. The confirm dialog says so: stored credentials stay in the secret store until you clear them there.
 

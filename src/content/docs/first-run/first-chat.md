@@ -35,4 +35,4 @@ Your choice applies to the next message. Agents and routes are set up in Setting
 
 Press "Attach image" next to the menu to add files. You can attach up to 8 files to a message: images, PDFs, text and Markdown files, video and audio. Timothy reads them before it answers.
 
-In the message box, type `#` to pull in a knowledge collection, or `@` to refer to a mission.
+In the message box, type `#` to pull in a knowledge collection, or to refer to a mission, a chat or a document.

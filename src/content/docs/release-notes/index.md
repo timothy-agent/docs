@@ -17,7 +17,11 @@ The [Upgrade](/docs/install/upgrade/) page explains how to upgrade. You cannot g
 
 ## Latest releases
 
-This list covers the ten releases up to 0.1.0-alpha.105. Dates are in UTC.
+This list covers the ten releases up to 0.1.0-alpha.106. Dates are in UTC.
+
+### 0.1.0-alpha.106 (2026-10-09)
+
+Creating a mission no longer waits for the mission name. The name arrives in the background, and the create button shows "Preparing mission…" during a longer setup. The Ollama preset now suggests `qwen3:8b`. A mission that pauses because its model is too small now names the model. GitLab connectors and destinations can now be saved. An email destination accepts only a Google connector with Gmail access. Timothy refuses to delete a credential that a channel still uses. Knowledge and the fetch tool can read more web pages, and Knowledge captions more images. The provider key panel no longer shows a "clear" link that always failed. Many app texts now match what the app offers. Timothy is built with Go 1.26.9, which has security fixes.
 
 ### 0.1.0-alpha.105 (2026-10-07)
 
@@ -54,7 +58,3 @@ Automations replace schedules. An automation has triggers, runs and notes, and i
 ### 0.1.0-alpha.97 (2026-09-23)
 
 The API, the scheduler and workflows now create missions through one shared path. Permission prompts that are still open survive a restart. The scheduler retries when a model route is down.
-
-### 0.1.0-alpha.96 (2026-09-23)
-
-The mission form hides destinations that are turned off. GitHub destination addresses are checked in a stricter way.
