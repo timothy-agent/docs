@@ -13,7 +13,7 @@ Timothy is in alpha. Each release is numbered `0.1.0-alpha.N`, and `N` goes up b
 
 ## Upgrade
 
-The [Install](/docs/install/) section explains how to upgrade. You cannot go back to an older version once a newer version has changed the database, so take a backup first.
+The [Upgrade](/docs/install/upgrade/) page explains how to upgrade. You cannot go back to an older version once a newer version has changed the database, so take a backup first.
 
 ## Latest releases
 
