@@ -3,6 +3,8 @@ title: Connectors
 description: The Connectors tab, where you link the accounts Timothy can act on.
 sidebar:
   order: 2
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 A connector links an outside service, such as a mailbox, a calendar, a code host or a cloud account. Its tools then become available to your agents. The app describes the tab as "External services Timothy can act on, like Google, Outlook, GitHub, or AWS."

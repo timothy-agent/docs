@@ -3,6 +3,7 @@ title: Sample mission
 description: Start a ready-made first mission from the Home checklist and follow it to its result.
 sidebar:
   order: 4
+assistant: false
 ---
 
 A mission is a longer task that Timothy works on by itself and then reports back on. The sample mission lets you see one from start to end without writing a goal.

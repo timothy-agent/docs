@@ -3,6 +3,8 @@ title: Memory
 description: What Timothy remembers, how memories change over time and how to review them.
 sidebar:
   order: 4
+app_path: /memory
+app_label: Memory
 ---
 
 ## What it is

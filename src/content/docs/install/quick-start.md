@@ -3,6 +3,7 @@ title: Quick start
 description: Install Timothy from the released images with one installer script.
 sidebar:
   order: 2
+assistant: false
 ---
 
 The quick start uses the released images. You do not build anything. You need Docker and the tools listed in the [requirements](/docs/install/requirements/).

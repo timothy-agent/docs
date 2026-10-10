@@ -3,6 +3,8 @@ title: Agents
 description: What an agent is, what it can use and how the default agent works.
 sidebar:
   order: 1
+app_path: /settings/agents
+app_label: Agents
 ---
 
 ## What it is

@@ -3,6 +3,8 @@ title: CalDAV calendar
 description: Connect any calendar that speaks CalDAV, to list and create events.
 sidebar:
   order: 14
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The CalDAV calendar connector works with any calendar server that offers CalDAV. The app describes it as "Any calendar via CalDAV, list and create events."

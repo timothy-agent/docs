@@ -18,3 +18,5 @@ jobs:
       - run: npm ci
       # The build also runs the internal link check.
       - run: npm run build
+      - run: npm run validate
+      - run: npm test

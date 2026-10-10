@@ -3,6 +3,7 @@ title: Install
 description: How to install Timothy on your own machine or server with Docker Compose.
 sidebar:
   order: 0
+assistant: false
 ---
 
 Timothy runs as a set of containers under Docker Compose. You install it on one machine, and you open it in your browser.

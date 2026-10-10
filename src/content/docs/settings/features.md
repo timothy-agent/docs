@@ -3,6 +3,8 @@ title: Features
 description: The Features tab, with switches and defaults for the whole instance.
 sidebar:
   order: 9
+app_path: /settings/features
+app_label: Features
 ---
 
 The Features tab holds switches and defaults for the whole instance. The app describes it as "Feature switches and defaults: changes serve immediately, no restarts."

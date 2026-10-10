@@ -3,6 +3,8 @@ title: Bitbucket
 description: Give Timothy a Bitbucket Cloud identity for mission clones, pushes and pull requests.
 sidebar:
   order: 11
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The Bitbucket connector gives Timothy a Bitbucket Cloud identity. The app describes it as "Identity for mission clone/push/PR, read-only pull request tools".

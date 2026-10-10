@@ -3,6 +3,7 @@ title: Requirements
 description: What your machine needs before you install Timothy.
 sidebar:
   order: 1
+assistant: false
 ---
 
 ## Docker

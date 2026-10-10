@@ -3,6 +3,8 @@ title: Providers and routes
 description: Where Timothy's models come from, which model does which job, and how costs are counted.
 sidebar:
   order: 2
+app_path: /settings/providers
+app_label: Providers
 ---
 
 ## What it is

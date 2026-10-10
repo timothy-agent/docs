@@ -3,6 +3,8 @@ title: Google Docs
 description: Connect Google Docs so Timothy can read, create and add to documents.
 sidebar:
   order: 5
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The Google Docs connector lets Timothy work with Google Docs in one Google account. The app describes it as "Read, create, and append to docs".

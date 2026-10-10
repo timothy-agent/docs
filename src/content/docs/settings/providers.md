@@ -3,6 +3,8 @@ title: Providers
 description: The Providers tab, where you connect the model providers Timothy routes work to.
 sidebar:
   order: 1
+app_path: /settings/providers
+app_label: Providers
 ---
 
 A provider is a source of models, such as OpenAI, Anthropic or a local Ollama. The app describes the tab as "Connect and manage the LLM providers Timothy can route work to." Which model answers which job is set in [Routing](/docs/settings/routing/).

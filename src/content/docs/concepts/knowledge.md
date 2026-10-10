@@ -3,6 +3,8 @@ title: Knowledge
 description: Documents you give Timothy so it can search and quote them in chats and missions.
 sidebar:
   order: 5
+app_path: /knowledge
+app_label: Knowledge
 ---
 
 ## What it is

@@ -3,6 +3,8 @@ title: GitLab
 description: Give Timothy a GitLab identity for mission clones, pushes and merge requests.
 sidebar:
   order: 12
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The GitLab connector gives Timothy a GitLab identity on gitlab.com or on a self-managed instance. The app describes it as "Identity for mission clone/push/PR, read-only pull request tools".

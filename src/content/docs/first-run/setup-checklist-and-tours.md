@@ -3,6 +3,8 @@ title: Setup checklist and tours
 description: What the Home setup checklist tracks, how page tours work, and what the Help menu offers.
 sidebar:
   order: 5
+app_path: /
+app_label: Home
 ---
 
 ## The setup checklist

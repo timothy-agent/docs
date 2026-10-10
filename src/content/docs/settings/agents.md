@@ -3,6 +3,8 @@ title: Agents
 description: The Agents tab, where you define who serves a chat session or a mission.
 sidebar:
   order: 3
+app_path: /settings/agents
+app_label: Agents
 ---
 
 An agent is a named assistant with its own instructions, model chain, tools, skills and knowledge. The app describes the tab as "Prompt overlays, skills, and tools bundled per agent." The default agent serves new sessions unless you pick another one in the chat composer.

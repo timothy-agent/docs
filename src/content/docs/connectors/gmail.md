@@ -3,6 +3,8 @@ title: Gmail
 description: Connect a Gmail account so Timothy can search, read and send email.
 sidebar:
   order: 2
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The Gmail connector links one Google account's mailbox. The app describes it as "Read, search, and send email".
