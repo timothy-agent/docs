@@ -31,6 +31,8 @@ Timothy checks the work itself. It confirms that every file the plan promised ex
 
 The mission page shows the phase, the plan and a "Timeline". The "Missions" page shows a notice when a mission finishes, fails, pauses or waits for you.
 
+The "Missions" page lists the newest missions first and loads older ones as you scroll. Its filters search every mission, not only the ones already loaded.
+
 A mission may stop to ask you something:
 
 - "Timothy has a question": pick an answer, or type one and press "Send". If you wait too long, it uses the proposed default.

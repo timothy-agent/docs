@@ -15,7 +15,7 @@ If the page says "Automations are switched off", turn them on under "Settings", 
 
 Open "Automations" in the sidebar. "Start from a template" offers ready-made automations, such as "Daily repo digest", "PR review comment", "Inbox triage" and "Coverage watch". Nothing is saved until you create it. "All automations" lists yours with the last run, and each row has "Run now".
 
-Open an automation to see three tabs: "Settings", "Run history" and "Notes". "Run history" lists every run with its trigger, status, start time, duration and, for runs that did not start, the "Skip reason".
+Open an automation to see three tabs: "Settings", "Run history" and "Notes". "Run history" lists runs newest first, loads older runs as you scroll, and shows each run with its trigger, status, start time, duration and, for runs that did not start, the "Skip reason".
 
 ## Triggers
 

@@ -15,6 +15,8 @@ The answer streams in as Timothy writes it. To stop it, press "Stop".
 
 Every chat is kept in the chat list, and you can search it by title or by what you said.
 
+A long chat opens at its latest messages. Scroll to the top, or press "Load earlier messages", to read older ones.
+
 ## When no model is set up
 
 If no chat model works, a notice sits above the message box and you cannot send:
