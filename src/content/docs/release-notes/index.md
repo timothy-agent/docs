@@ -17,7 +17,11 @@ The [Upgrade](/docs/install/upgrade/) page explains how to upgrade. You cannot g
 
 ## Latest releases
 
-This list covers the ten releases up to 0.1.0-alpha.106. Dates are in UTC.
+This list covers the ten releases up to 0.1.0-alpha.107. Dates are in UTC.
+
+### 0.1.0-alpha.107 (2026-10-10)
+
+Timothy can now answer questions about itself in chat. It reads these docs, which ship with each release, and the live state of your instance, and it links to the right page in the app. Links in chat to other app pages now open inside the app. Long lists now load page by page: missions, notifications, automation and workflow runs, the memory browser, the review queue and chat history. Memory recall is better. Facts you rely on stay recallable even if you never restate them. Unrelated memories no longer fill a reply. Short names such as "Go" match only whole words. Old memories now fade evenly, and faded memories rank lower until you confirm them again. When two memories merge, Timothy keeps who said it and when. Missions can start test databases through mise. Knowledge captions SVG images. The help menu labels fit on one line, and the approval card in chat stays inside the message.
 
 ### 0.1.0-alpha.106 (2026-10-10)
 
@@ -54,7 +58,3 @@ This release adds chat channels: Telegram with pairing, Slack in socket mode, an
 ### 0.1.0-alpha.98 (2026-09-23)
 
 Automations replace schedules. An automation has triggers, runs and notes, and it can run from a cron schedule or by hand. The web app has an automations dashboard and editor, and there are built-in templates.
-
-### 0.1.0-alpha.97 (2026-09-23)
-
-The API, the scheduler and workflows now create missions through one shared path. Permission prompts that are still open survive a restart. The scheduler retries when a model route is down.
