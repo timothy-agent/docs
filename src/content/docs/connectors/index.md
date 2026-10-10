@@ -45,6 +45,7 @@ Some facts follow from this:
 - [Google Calendar](/docs/connectors/google-calendar/)
 - [Google Drive](/docs/connectors/google-drive/)
 - [Google Docs](/docs/connectors/google-docs/)
+- [Google Search Console](/docs/connectors/google-search-console/)
 - [Outlook](/docs/connectors/outlook/)
 - [AWS](/docs/connectors/aws/)
 - [GCP](/docs/connectors/gcp/)

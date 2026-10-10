@@ -17,7 +17,11 @@ The [Upgrade](/docs/install/upgrade/) page explains how to upgrade. You cannot g
 
 ## Latest releases
 
-This list covers the ten releases up to 0.1.0-alpha.107. Dates are in UTC.
+This list covers the ten releases up to 0.1.0-alpha.108. Dates are in UTC.
+
+### 0.1.0-alpha.108 (2026-10-10)
+
+At startup, Timothy loads its own docs for help in chat. If the model gateway is not ready yet, Timothy now tries again until it works. Before, it waited for the next restart. The docs need an embedding model. Without one, help in chat has no docs to read.
 
 ### 0.1.0-alpha.107 (2026-10-10)
 
@@ -54,7 +58,3 @@ The Slack channel checks its app token when you test the connection. You can ans
 ### 0.1.0-alpha.99 (2026-09-24)
 
 This release adds chat channels: Telegram with pairing, Slack in socket mode, and email over an IMAP connector. Automations can now start from a signed inbound webhook, a GitHub event or a channel. A channel can also receive an automation's result.
-
-### 0.1.0-alpha.98 (2026-09-23)
-
-Automations replace schedules. An automation has triggers, runs and notes, and it can run from a cron schedule or by hand. The web app has an automations dashboard and editor, and there are built-in templates.
