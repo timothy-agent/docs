@@ -9,7 +9,7 @@ app_label: Channels
 
 A channel lets you talk to Timothy from a messaging app. You get the same agents and memory as in the web app. You set channels up in Settings, "Channels".
 
-Timothy polls Telegram, holds a Socket Mode connection to Slack and polls email inboxes over IMAP. Nothing inbound needs exposing, so you do not need a public address.
+Timothy connects outbound to Telegram, Slack and email inboxes (IMAP), so you do not need a public address. The tab says: "Where people talk to Timothy: Telegram, Slack and email."
 
 The "Channels" switch in [Features](/docs/settings/features/) turns all channels on or off.
 
