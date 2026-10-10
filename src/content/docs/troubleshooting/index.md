@@ -37,7 +37,7 @@ Replace `brain` with the service you want to read. [Where to look](/docs/trouble
 - [Nothing works after install](/docs/troubleshooting/nothing-works-after-install/): the setup messages you see before Timothy can answer.
 - [Provider verify fails](/docs/troubleshooting/provider-verify-fails/): the connection test for a model provider fails, including a local Ollama.
 - [Chat sends nothing over http](/docs/troubleshooting/chat-sends-nothing-over-http/): you open Timothy by a LAN address and the send button does nothing.
-- [Mission create is slow](/docs/troubleshooting/mission-create-is-slow/): creating a mission takes up to 30 seconds.
+- [Mission create is slow](/docs/troubleshooting/mission-create-is-slow/): the create button shows "Preparing mission…", or a new mission has no name yet.
 - [Sandbox will not start](/docs/troubleshooting/sandbox-will-not-start/): missions cannot run their sandbox.
 - [Connector stopped working](/docs/troubleshooting/connector-stopped-working/): a Google, Microsoft or token-based connector fails after it worked before.
 - [Where to look](/docs/troubleshooting/where-to-look/): logs per service, the cost ledger, the mission timeline and how to report a bug.

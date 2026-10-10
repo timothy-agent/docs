@@ -39,7 +39,9 @@ Every kind has a "Name" field. The name must be unique.
 
 | Field | What it does |
 |---|---|
-| "Google connector" | The Gmail account that sends the mail. Only enabled Google connectors appear. Pick one made from the [Gmail](/docs/connectors/gmail/) preset. |
+| "Google connector" | The Gmail account that sends the mail. Only enabled Google connectors with Gmail access appear. Make one from the [Gmail](/docs/connectors/gmail/) preset. |
+
+Timothy refuses an email destination that names any other connector. A Google Calendar, Google Drive or Google Docs connector gets "config.connector_id names a google connector without Gmail access, which cannot send mail". An Outlook, IMAP or other connector gets a message that starts with "config.connector_id names a connector of kind".
 | "To" | The recipient address. |
 
 ### Webhook

@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-A connector links an outside service, such as a mailbox, a calendar, a code host or a cloud account. Its tools then become available to your agents. The app describes the tab as "External services Timothy can act on, like Google, Outlook, or MCP servers."
+A connector links an outside service, such as a mailbox, a calendar, a code host or a cloud account. Its tools then become available to your agents. The app describes the tab as "External services Timothy can act on, like Google, Outlook, GitHub, or AWS."
 
 Each connector kind has its own page with the full form, the credential to create and the test. Start at [Connectors and channels](/docs/connectors/).
 

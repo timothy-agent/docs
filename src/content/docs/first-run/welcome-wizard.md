@@ -48,7 +48,7 @@ Pick "Local model (Ollama)". It needs no key. Ollama must run on the host, and t
 
 - If Ollama runs on the same machine as Timothy, keep the default address.
 - If it runs on another machine, open "Advanced: base URL" and enter its address, for example `http://192.168.1.20:11434/v1`.
-- In "Model", type the exact name of a model you pulled in Ollama.
+- In "Model", type the exact name of a model you pulled in Ollama. The preset suggests `qwen3:8b`, which can chat and run missions.
 
 A model that is not loaded yet can miss the first test. Press "Test connection" again. If the test fails on a Linux server, the form shows a hint about the `extra_hosts` setting that Docker needs.
 
@@ -71,6 +71,8 @@ When you add a provider, Timothy fills four jobs with models from it:
 | "Images: ..." | The model that reads images. |
 
 For the last two jobs, Timothy picks the cheapest fitting model this provider offers. A provider without such a model leaves that job empty, and the line says "no model yet". You can fill it later with another provider.
+
+The chat model also runs missions. Missions refuse some small models, such as `qwen2.5:7b` and the Amazon Nova models. If your chat model is one of them, a hint shows under the chat line: "This model can chat but cannot run missions. Pick a stronger model for missions in Settings."
 
 The "Change in Settings" link opens "Settings", then "Routing". There you can change every job later. Press "Continue".
 

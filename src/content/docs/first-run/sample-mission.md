@@ -17,7 +17,7 @@ Timothy creates a mission with this goal:
 
 The goal ends with a run tag based on the current date and time, so each sample mission is unique. The mission is a quick, single-pass one. It needs no connected account and no code repository.
 
-Timothy names the mission before it opens the mission page. On a slow local model, this can take up to half a minute. Wait for the page to open.
+The mission page opens right away. Timothy gives the mission a short name in the background, and the name shows up when it is ready. If the page takes more than 2 seconds to open, the button reads "Preparing mission…". Wait for the page to open.
 
 To write your own goal instead, press "Open" on the same checklist item. It opens the new mission form.
 
@@ -41,4 +41,6 @@ When a mission succeeds, the checklist item "Run your first mission" is ticked.
 
 ## If it pauses
 
-Missions refuse some small models that cannot do this kind of work well. By default these are `qwen2.5:7b` and the Amazon Nova models. If one of them serves the mission, the mission pauses instead of running. Add a stronger model in "Settings", then "Providers", and change the chat job in "Settings", then "Routing".
+Missions refuse some small models that cannot do this kind of work well. By default these are `qwen2.5:7b` and the Amazon Nova models. If one of them serves the mission, the mission pauses instead of running. The banner names the model, for example "Paused: qwen2.5:7b is below the mission floor". It also says "This model can chat but cannot run missions. Pick a stronger model for missions in Settings, then resume."
+
+To fix it, add a stronger model in "Settings", then "Providers". Change the chat job in "Settings", then "Routing". Then open the mission and press "Resume".
