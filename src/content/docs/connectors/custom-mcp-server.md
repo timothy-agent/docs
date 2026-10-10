@@ -1,6 +1,6 @@
 ---
 title: Custom MCP server
-description: Connect any streamable-HTTP MCP server so its tools are available in chat.
+description: Connect any streamable-HTTP MCP server, check its tools before saving, and hand them to agents.
 sidebar:
   order: 10
 app_path: /settings/connectors
@@ -13,35 +13,32 @@ Use it for a provider that offers a hosted MCP endpoint but has no tile of its o
 
 ## What it enables
 
-The connector adds the tools the server offers. Timothy lists them when it connects, so the set can change when the server changes.
+The connector adds the tools the server offers. Timothy lists them before you save, so you see what you get. The set can change when the server changes.
 
 These tools are for chat only. Missions do not get them.
 
-A tool keeps its own name when no other tool has that name. When a name would clash with a built-in tool or another server's tool, it gets the connector name as a prefix.
+A tool keeps its own name when no other tool has that name. When a name would clash with a built-in tool or another server's tool, it gets the connector name as a prefix. The add page shows the name each tool will get.
 
-When the server has more tools than the "MCP tool index threshold" in [Features](/docs/settings/features/), the agent first sees a short index and loads the tools it needs through `load_tool`.
-
-Add the tools to an agent's "Tools allowlist" before you use them. See [Agents](/docs/settings/agents/).
+When the server has more tools than the "MCP tool index threshold" in [Features](/docs/settings/features/), the agent first sees a short index and loads the tools it needs through `load_tool`. The add page says when a server is above that threshold.
 
 ## What you need
 
-The server's streamable-HTTP endpoint address. Servers that need a login use a bearer token; servers that need an OAuth consent flow are not supported yet.
+The server's streamable-HTTP endpoint address, or the JSON config the provider publishes. Servers that need a login use a bearer token or an OAuth sign-in; see [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/) for the second.
 
 Servers that only run as a local program (started with `npx` or `python`) are not supported. Timothy connects over HTTP only.
 
 ## Add the connector
 
 1. Open Settings, "Connectors", and pick the "Custom MCP server" tile under "Add a connector".
-2. Fill the form:
-
-   | Field | What to enter |
-   |---|---|
-   | "Name" | A unique name. It becomes the prefix for tool names that clash. |
-   | "Endpoint" | The server's streamable-HTTP address, for example `https://mcp.example.com/mcp`. |
-   | "Bearer token (optional)" | Leave empty for a server without auth. Otherwise choose "New credential" and paste the token, or choose "Use existing" and pick a stored token. |
-
-3. Press "Test connection". Timothy saves the connector and asks the server for its tool list.
-4. Press "Add connector". The connector is enabled.
+2. In "URL or JSON config", paste the server's address or the provider's JSON config. Timothy reads the common `mcpServers` shape and also accepts the inner object or a single entry, with the address in `url`, `serverUrl` or `endpoint`. If the config lists several servers, pick one under "Server". Entries that start a local program (they have a `command`) are listed as "Needs a local runtime, not supported yet". A bearer token in an `Authorization` header is moved into the token field and saved as a secret. A header with a placeholder such as `${API_KEY}` must be replaced before you continue.
+3. Check the "Name". It comes from the config key and you can change it.
+4. Press "Check server". Nothing is saved yet.
+   - If the server asks for a token, a "Bearer token" field appears. Paste it and check again. The token is used only for the check until you add the connector.
+   - If the server needs an OAuth login, the page says so. Add it through an MCP tile with "OAuth login" instead; see [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/).
+   - If the server cannot be reached, the page shows the network reason. A server on a private network must be on the outbound host allowlist in Settings.
+5. Review the tools. Each row shows the name, the description, and whether the server says the tool is read-only. The server makes that claim and Timothy does not check it. A row that will be renamed shows the new name, for example "as notion_search".
+6. Uncheck any tool you do not want. "Try it" opens a form for one tool, checks your arguments and shows the request Timothy would send. It does not run the tool; real calls happen in chat and ask for permission.
+7. Under "Agents", pick the agents that should get the checked tools, then press "Add connector". Timothy saves the token as a secret, adds and enables the connector, and adds the checked tools to each chosen agent's "Tools allowlist". You can change the allowlists later under [Agents](/docs/settings/agents/).
 
 ## Verify
 
@@ -51,5 +48,7 @@ Press "Test" on the connector's card. A working connector shows "Connection OK" 
 
 | Message | What to do |
 |---|---|
-| "Connection failed:" with a 401 | The server needs a token, or the token is wrong. Edit the connector and set the bearer token. |
-| "Connection failed:" with a network error | Timothy could not reach the endpoint. Check the address and that the server allows connections from Timothy's network. |
+| The check says the server needs a token | Paste the server's bearer token and check again. |
+| The check says the server needs an OAuth login | Use an MCP tile with "OAuth login". |
+| The check shows a network reason | Check the address, and add the host to the outbound host allowlist if it is on a private network. |
+| "Connection failed:" with a 401 on the card later | The token was revoked. Edit the connector and set a new bearer token. |
