@@ -3,6 +3,8 @@ title: Missions
 description: Longer tasks Timothy plans, does and checks by itself.
 sidebar:
   order: 3
+app_path: /missions
+app_label: Missions
 ---
 
 ## What it is

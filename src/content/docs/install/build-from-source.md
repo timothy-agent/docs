@@ -3,6 +3,7 @@ title: Build from source
 description: Build every Timothy image from the repository and run the stack with make.
 sidebar:
   order: 3
+assistant: false
 ---
 
 Build from source if you want to change Timothy's code. Everything builds inside Docker, so you do not install Go or Node on your machine. You need Docker, `git` and `make`.

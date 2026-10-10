@@ -3,6 +3,8 @@ title: Google Calendar
 description: Connect a Google Calendar so Timothy can list and create events.
 sidebar:
   order: 3
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The Google Calendar connector links the primary calendar of one Google account. The app describes it as "List and create events".

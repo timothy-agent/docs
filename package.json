@@ -7,7 +7,10 @@
     "dev": "astro dev --host 0.0.0.0",
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0",
-    "astro": "astro"
+    "astro": "astro",
+    "validate": "node scripts/validate.mjs --routes scripts/routes.json",
+    "bundle": "node scripts/bundle.mjs --out dist-bundle --routes scripts/routes.json",
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.5",

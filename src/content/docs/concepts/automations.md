@@ -3,6 +3,8 @@ title: Automations
 description: Missions that start on a schedule or when something happens.
 sidebar:
   order: 6
+app_path: /automations
+app_label: Automations
 ---
 
 ## What it is

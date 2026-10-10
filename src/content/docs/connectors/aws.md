@@ -3,6 +3,8 @@ title: AWS
 description: Connect your AWS account through the AWS MCP Server.
 sidebar:
   order: 7
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The AWS connector reaches your AWS account through the managed AWS MCP Server. The app describes it as "Your AWS accounts via the AWS MCP Server: resources, docs, API queries".

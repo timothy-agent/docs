@@ -3,6 +3,8 @@ title: Destinations
 description: Where mission results go, and the destination kinds Timothy offers.
 sidebar:
   order: 16
+app_path: /settings/destinations
+app_label: Destinations
 ---
 
 A destination is a place where mission results go. You set destinations up once in Settings, "Destinations". Then you pick them when you create a mission or an automation.

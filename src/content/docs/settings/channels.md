@@ -3,6 +3,8 @@ title: Channels
 description: The Channels tab, where you let people talk to Timothy from Telegram, Slack or email.
 sidebar:
   order: 8
+app_path: /settings/channels
+app_label: Channels
 ---
 
 A channel lets you talk to Timothy from a chat app or by email, with the same agents and memory. The app describes the tab as "Talk to Timothy from chat apps like Telegram, with the same agents and memory."

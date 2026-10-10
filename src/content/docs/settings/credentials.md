@@ -3,6 +3,8 @@ title: Credentials
 description: The Credentials tab, the list of every key and token Timothy has stored.
 sidebar:
   order: 6
+app_path: /settings/credentials
+app_label: Credentials
 ---
 
 The Credentials tab lists every stored credential by name. The app describes it as "API keys and tokens stored for providers and connectors." Values never show.

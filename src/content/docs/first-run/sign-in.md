@@ -3,6 +3,7 @@ title: Sign in
 description: Sign in to the Timothy web interface with your token link, and what to do if you lose it.
 sidebar:
   order: 1
+assistant: false
 ---
 
 Timothy has no user name and no password page. The web interface signs in with one API token. That token is the `TIMOTHY_API_TOKEN` value in your `.env` file.

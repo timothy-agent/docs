@@ -3,6 +3,7 @@ title: First chat
 description: Send your first message, pick who answers, and attach files.
 sidebar:
   order: 3
+assistant: false
 ---
 
 If you picked a first message at the end of the welcome wizard, Chat is already open and Timothy is answering it. You can also start a chat from Home or from "Chat" in the sidebar.

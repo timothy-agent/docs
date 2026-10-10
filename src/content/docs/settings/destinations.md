@@ -3,6 +3,8 @@ title: Destinations
 description: The Destinations tab, where you set up the places mission results go.
 sidebar:
   order: 7
+app_path: /settings/destinations
+app_label: Destinations
 ---
 
 A destination is a place where mission results go. The tab says: "Where mission results go. Attach one or more to a mission and its outcome digest delivers there once it finishes."

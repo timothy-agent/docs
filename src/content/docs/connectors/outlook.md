@@ -3,6 +3,8 @@ title: Outlook
 description: Connect an Outlook or Microsoft 365 account for mail and calendar.
 sidebar:
   order: 6
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The Outlook connector links one Microsoft account. The app describes it as "Read, search, and send mail; list calendar events".

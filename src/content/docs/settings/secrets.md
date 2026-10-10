@@ -3,6 +3,8 @@ title: Secrets
 description: The Secrets tab, where you choose where Timothy stores keys and tokens.
 sidebar:
   order: 5
+app_path: /settings/secrets
+app_label: Secrets
 ---
 
 The Secrets tab picks the backend that holds every key, token and password you enter. The app describes it as "Where credentials live: Timothy storage, Vault, or AWS Secrets Manager."

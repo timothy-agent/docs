@@ -3,6 +3,8 @@ title: Google Drive
 description: Connect Google Drive so Timothy can search and read your files.
 sidebar:
   order: 4
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The Google Drive connector gives Timothy read-only access to one Google account's Drive. The app describes it as "Search and read files (read-only)".

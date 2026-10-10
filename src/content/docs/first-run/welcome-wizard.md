@@ -3,6 +3,8 @@ title: Welcome wizard
 description: Connect your first model provider, check it, and see which model does which job.
 sidebar:
   order: 2
+app_path: /welcome
+app_label: Welcome
 ---
 
 A fresh install has no model, so Timothy cannot answer anything yet. The welcome wizard fixes that. Home sends you there on its own while no chat model works. The wizard has seven steps, and a bar at the top shows "Step 1 of 7" and so on.

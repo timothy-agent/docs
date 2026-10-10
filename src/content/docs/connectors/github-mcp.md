@@ -3,6 +3,8 @@ title: GitHub MCP
 description: Connect GitHub's MCP server so Timothy can work with issues, pull requests and code in chat.
 sidebar:
   order: 9
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The GitHub MCP connector links Timothy to GitHub's own MCP server. The app describes it as "Issues, PRs, code, via MCP".

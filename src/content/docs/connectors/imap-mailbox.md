@@ -3,6 +3,8 @@ title: IMAP mailbox
 description: Connect any email account over IMAP, with optional sending over SMTP.
 sidebar:
   order: 13
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The IMAP mailbox connector works with any email account that offers IMAP. The app describes it as "Any email account via IMAP, optional SMTP sending."

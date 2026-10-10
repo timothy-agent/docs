@@ -3,6 +3,8 @@ title: GCP
 description: Connect a Google Cloud project to read Cloud Storage and run BigQuery queries.
 sidebar:
   order: 8
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The GCP connector reaches one Google Cloud project with a service account key. The app describes it as "A GCP project via a service-account key: Cloud Storage objects, BigQuery queries".

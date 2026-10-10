@@ -3,6 +3,8 @@ title: GitHub
 description: Give Timothy a GitHub identity for mission clones, pushes and pull requests.
 sidebar:
   order: 10
+app_path: /settings/connectors
+app_label: Connectors
 ---
 
 The GitHub connector gives Timothy a GitHub identity. The app describes it as "Identity for mission clone/push/PR, read-only pull request tools".

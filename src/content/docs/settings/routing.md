@@ -3,6 +3,8 @@ title: Routing
 description: The Routing tab, where routes decide which provider and model handle each kind of job.
 sidebar:
   order: 4
+app_path: /settings/routes
+app_label: Routing
 ---
 
 A route is a named chain of providers and models. When a job uses a route, Timothy tries the chain's entries in order until one answers. The app describes the tab as "Task routes decide which provider chain handles a given job."

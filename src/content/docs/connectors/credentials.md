@@ -3,6 +3,8 @@ title: Credentials
 description: How Timothy stores keys, tokens and passwords, and how to reuse, rotate and delete them.
 sidebar:
   order: 1
+app_path: /settings/credentials
+app_label: Credentials
 ---
 
 A credential is one secret value stored under a name. API keys, access tokens, passwords, OAuth client secrets, AWS key pairs and service account keys are all credentials.
