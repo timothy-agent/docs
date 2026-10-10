@@ -7,7 +7,7 @@ app_path: /settings/destinations
 app_label: Destinations
 ---
 
-A destination is a place where mission results go. The tab says: "Where mission results go. Attach one or more to a mission and its outcome digest delivers there once it finishes."
+A destination is a place where mission results go. The tab says: "Where mission results go. Attach one or more to a mission and the outcome digest is delivered there when it finishes."
 
 The tab has two sections: "Your destinations" and "Add a destination". "Add a destination" offers "Email", "Webhook", "Channel", "GitHub", "Bitbucket" and "GitLab".
 
