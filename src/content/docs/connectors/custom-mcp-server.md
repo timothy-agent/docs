@@ -34,7 +34,7 @@ Servers that only run as a local program (started with `npx` or `python`) are no
 3. Check the "Name". It comes from the config key and you can change it.
 4. Press "Check server". Nothing is saved yet.
    - If the server asks for a token, a "Bearer token" field appears. Paste it and check again. The token is used only for the check until you add the connector.
-   - If the server needs an OAuth login, the page says so. Add it through an MCP tile with "OAuth login" instead; see [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/).
+   - If the server needs an OAuth login, "Client ID" and "Client secret" fields appear. Leave them empty unless the server needs them, then press "Connect with OAuth" and approve access on the server's sign-in page. Tools are listed only after you connect, so set the agents' allowlists under [Agents](/docs/settings/agents/) afterwards. See [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/).
    - If the server cannot be reached, the page shows the network reason. A server on a private network must be on the outbound host allowlist in Settings.
 5. Review the tools. Each row shows the name, the description, and whether the server says the tool is read-only. The server makes that claim and Timothy does not check it. A row that will be renamed shows the new name, for example "as notion_search".
 6. Uncheck any tool you do not want. "Try it" opens a form for one tool, checks your arguments and shows the request Timothy would send. It does not run the tool; real calls happen in chat and ask for permission.
@@ -49,6 +49,6 @@ Press "Test" on the connector's card. A working connector shows "Connection OK" 
 | Message | What to do |
 |---|---|
 | The check says the server needs a token | Paste the server's bearer token and check again. |
-| The check says the server needs an OAuth login | Use an MCP tile with "OAuth login". |
+| The check says the server needs an OAuth login | Press "Connect with OAuth". The endpoint must use https. |
 | The check shows a network reason | Check the address, and add the host to the outbound host allowlist if it is on a private network. |
 | "Connection failed:" with a 401 on the card later | The token was revoked. Edit the connector and set a new bearer token. |
