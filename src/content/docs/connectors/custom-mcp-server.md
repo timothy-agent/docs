@@ -52,6 +52,16 @@ Press "Re-probe" to check the server again with the stored token or OAuth sessio
 
 A connector added before this panel existed, or connected with OAuth, shows "Not checked yet" until the first re-probe.
 
+## Let missions read a tool
+
+Missions and automations never get an MCP connector's tools on their own. The "Missions may read" checkbox in the "Tools" panel is your review: tick a tool and missions whose agent lists it can call it, the same way they call native read tools such as mail search.
+
+Timothy does not use the server's read-only claim for this. Read the tool's description, decide whether a mission running unattended may call it, and tick only then. A mission still needs the tool on its agent's "Tools allowlist" and, to run without a prompt, on its "Approval allowlist" under [Agents](/docs/settings/agents/).
+
+The marks are bound to the tool list you reviewed. When a re-probe shows that the server changed its tools, every mark lapses: missions stop getting the tools, the panel says so, and "Confirm marks" re-applies them against the new list once you have looked at it. A tool the server removed drops out of the marks.
+
+A server whose tools sit behind the tool index (see the "Test" note about `load_tool`) cannot be marked; its tools stay in chat.
+
 ## Common errors
 
 | Message | What to do |

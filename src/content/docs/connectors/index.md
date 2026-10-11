@@ -23,7 +23,7 @@ Each connector adds tools. A tool shows up once per capability, for example `sea
 
 An agent only uses the tools you list in its "Tools allowlist". After you add a connector, open the agent in Settings, "Agents", and add the new tools there. Tool calls still go through the normal permission prompts.
 
-Missions see fewer connector tools than chat. A mission only gets read tools, such as reading mail or listing calendar events, and only if the agent lists them. Missions never get the tools of an MCP connector. See each connector page for the details.
+Missions see fewer connector tools than chat. A mission only gets read tools, such as reading mail or listing calendar events, and only if the agent lists them. Missions get an MCP connector's tools only after you tick "Missions may read" on the connector page, see [Custom MCP server](/docs/connectors/custom-mcp-server/#let-missions-read-a-tool). See each connector page for the details.
 
 ## How credentials work
 
