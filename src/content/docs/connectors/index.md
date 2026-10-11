@@ -51,6 +51,7 @@ Some facts follow from this:
 - [GitHub MCP](/docs/connectors/github-mcp/)
 - [Hosted MCP servers](/docs/connectors/mcp-catalog/)
 - [Custom MCP server](/docs/connectors/custom-mcp-server/)
+- [Local MCP server](/docs/connectors/local-mcp-server/)
 - [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/)
 - [GitHub](/docs/connectors/github/)
 - [Bitbucket](/docs/connectors/bitbucket/)
