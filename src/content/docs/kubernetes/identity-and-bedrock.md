@@ -35,7 +35,11 @@ Either way, the gateway pod receives the role's credentials from the SDK's defau
 
 ## Create the provider
 
-The "Add a provider" form in [Settings, Providers](/docs/settings/providers/) asks for an access key pair. It has no switch for the cluster identity yet, so create the provider through the API. The option `auth` set to `ambient` tells the gateway to use the identity. Leave `credential_ref` out; a provider with both a credential and `auth: ambient` is rejected, and so is one without a region.
+Open [Settings, Providers](/docs/settings/providers/), pick "AWS Bedrock" under "Add a provider", and set "Authentication" to "Cloud identity". The key fields disappear. Choose the region, test the connection, and add the provider. Timothy stores no key for it.
+
+An existing Bedrock provider switches the same way: open it, set "Authentication" to "Cloud identity" and save. The credential reference is dropped and the stored key pair stays in the credential store until you delete it there.
+
+The same provider can be created through the API. The option `auth` set to `ambient` tells the gateway to use the identity. Leave `credential_ref` out; a provider with both a credential and `auth: ambient` is rejected, and so is one without a region.
 
 ```sh
 curl -X POST https://timothy.example.com/v1/admin/providers \
