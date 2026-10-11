@@ -38,4 +38,6 @@ To use a bearer token instead of OAuth where the provider allows it, switch "Aut
 
 ## Servers not in the catalog
 
-Any other hosted server works through the [Custom MCP server](/docs/connectors/custom-mcp-server/) tile. Servers that only run as a local program are not supported yet.
+Any other hosted server works through the [Custom MCP server](/docs/connectors/custom-mcp-server/) tile.
+
+Some providers ship only a local program, not a hosted server. Google Analytics is one: its [analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) server runs on your side. Timothy runs such a server in its own sandbox container; see [Local MCP server](/docs/connectors/local-mcp-server/), which uses Google Analytics as its example.

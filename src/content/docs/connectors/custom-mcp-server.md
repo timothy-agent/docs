@@ -35,12 +35,12 @@ A connector added before providers existed uses its own name as the prefix, so i
 
 The server's streamable-HTTP endpoint address, or the JSON config the provider publishes. Servers that need a login use a bearer token or an OAuth sign-in; see [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/) for the second.
 
-Servers that only run as a local program (started with `npx` or `python`) are not supported. Timothy connects over HTTP only.
+A server that only runs as a local program (started with `npx` or `python`) can run in its own sandbox container; see [Local MCP server](/docs/connectors/local-mcp-server/).
 
 ## Add the connector
 
 1. Open Settings, "Connectors", and pick the "Custom MCP server" tile under "Add a connector".
-2. In "URL or JSON config", paste the server's address or the provider's JSON config. Timothy reads the common `mcpServers` shape and also accepts the inner object or a single entry, with the address in `url`, `serverUrl` or `endpoint`. If the config lists several servers, pick one under "Server". Entries that start a local program (they have a `command`) are listed as "Needs a local runtime, not supported yet". A bearer token in an `Authorization` header is moved into the token field and saved as a secret. A header with a placeholder such as `${API_KEY}` must be replaced before you continue.
+2. In "URL or JSON config", paste the server's address or the provider's JSON config. Timothy reads the common `mcpServers` shape and also accepts the inner object or a single entry, with the address in `url`, `serverUrl` or `endpoint`. If the config lists several servers, pick one under "Server". An entry that starts a local program (it has a `command`) is set up as a [Local MCP server](/docs/connectors/local-mcp-server/). A bearer token in an `Authorization` header is moved into the token field and saved as a secret. A header with a placeholder such as `${API_KEY}` must be replaced before you continue.
 3. Check the "Name". It comes from the config key and you can change it. "Provider" is optional: leave it empty and Timothy uses the server's own name after the check. See [Tool names](#tool-names).
 4. Press "Check server". Nothing is saved yet.
    - If the server asks for a token, a "Bearer token" field appears. Paste it and check again. The token is used only for the check until you add the connector.
