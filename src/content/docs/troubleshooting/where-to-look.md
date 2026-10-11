@@ -64,7 +64,7 @@ Pick the service by what it does:
 | `searxng` | Web search for Timothy's search tool. | Web search returns nothing. |
 | `markitdown` | Turns files such as PDFs into text. | A file upload fails to convert. |
 | `ocr` | Reads text from images. | Text in images is not found. |
-| `pdfgen` | Turns markdown into PDF, for example a mission export. | A PDF export fails. |
+| `pdfgen` | Turns markdown into PDF, for a chat answer, a mission export or any document Timothy writes. | A PDF export fails. |
 | `whisper` | Local speech to text for the microphone button. It is off unless you turn it on. | Voice input fails. |
 | `postgres` | The database. | Every service fails, or the disk may be full. |
 

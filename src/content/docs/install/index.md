@@ -22,7 +22,7 @@ After the install, these services run on your machine:
 | searxng | Web search for Timothy's search tool. |
 | markitdown | Turns files such as PDFs into text Timothy can read. |
 | ocr | Reads text from images. |
-| pdfgen | Turns a mission result into a PDF. |
+| pdfgen | Makes PDFs: a chat answer, a mission result, or any document Timothy writes. |
 | whisper | Local speech to text for the microphone button. It is off unless you turn it on. |
 
 A PostgreSQL database holds all data. It has no port on your machine. Only two ports are open to you: 3300 for the web interface and 8300 for the API.
@@ -31,6 +31,8 @@ A PostgreSQL database holds all data. It has no port on your machine. Only two p
 
 - [Quick start](/docs/install/quick-start/) uses the released images. You need Docker and nothing else. This is the right choice for most people.
 - [Build from source](/docs/install/build-from-source/) builds every image from the Timothy repository. Choose it if you want to change the code.
+
+Do you run a Kubernetes cluster? The [Kubernetes](/docs/kubernetes/) pages install Timothy there with the Helm chart.
 
 Before you start, read the [requirements](/docs/install/requirements/).
 

@@ -21,6 +21,7 @@ export default defineConfig({
       plugins: [starlightLinksValidator()],
       sidebar: [
         section('Install', 'install'),
+        section('Kubernetes', 'kubernetes'),
         section('First run', 'first-run'),
         section('Concepts', 'concepts'),
         section('Connectors and channels', 'connectors'),

@@ -44,6 +44,14 @@ Servers that only run as a local program (started with `npx` or `python`) are no
 
 Press "Test" on the connector's card. A working connector shows "Connection OK" and the number of tools the server offers.
 
+## Review the tools later
+
+Open the connector from the Connectors list. The "Tools" panel lists the tools from the last check with the server's read-only claim and a checkbox per agent. Tick or untick an agent to add the tool to, or remove it from, that agent's "Tools allowlist". Only that agent changes.
+
+Press "Re-probe" to check the server again with the stored token or OAuth session. Tools the server added since the last check are marked "new" and are not allowed anywhere yet. Tools the server removed are marked "removed" until the next check. If an OAuth session has expired, the panel asks you to reconnect.
+
+A connector added before this panel existed, or connected with OAuth, shows "Not checked yet" until the first re-probe.
+
 ## Common errors
 
 | Message | What to do |
