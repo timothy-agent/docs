@@ -50,6 +50,7 @@ Some facts follow from this:
 - [AWS](/docs/connectors/aws/)
 - [GCP](/docs/connectors/gcp/)
 - [GitHub MCP](/docs/connectors/github-mcp/)
+- [Hosted MCP servers](/docs/connectors/mcp-catalog/)
 - [Custom MCP server](/docs/connectors/custom-mcp-server/)
 - [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/)
 - [GitHub](/docs/connectors/github/)
