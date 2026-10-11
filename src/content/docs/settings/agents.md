@@ -46,4 +46,4 @@ On the "New agent" page, press "Create agent". On an agent's page, press "Save" 
 
 A tool from a connector is only offered to an agent that lists it in "Tools allowlist". This applies to chat and to missions. In missions, only the connector tools that read are offered. See [Connectors and channels](/docs/connectors/).
 
-When an MCP connector hides its tools behind an index, the agent also gets `load_tool` as soon as one of that connector's tools is in its allowlist.
+An MCP tool's name starts with its provider, such as `notion_search`. An entry `search` allows that tool and every other tool ending in `_search`; `notion_search` allows only Notion's. When an MCP connector hides its tools behind an index, the agent also gets its entry point, such as `notion_load_tool`, as soon as one of that connector's tools is in its allowlist.

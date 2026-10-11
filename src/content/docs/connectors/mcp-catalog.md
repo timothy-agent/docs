@@ -9,7 +9,7 @@ app_label: Connectors
 
 Under "Add a connector", Timothy lists tiles for well-known hosted MCP servers. Each tile opens the add form with the endpoint filled in and the right authentication selected, so connecting is a click and a sign-in instead of a hunt for URLs.
 
-Every tile creates a connector of kind `mcp`, the same as [Custom MCP server](/docs/connectors/custom-mcp-server/). The only difference is the prefilled values. Sign-in works as described in [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/).
+Every tile creates a connector of kind `mcp`, the same as [Custom MCP server](/docs/connectors/custom-mcp-server/). The only difference is the prefilled values. The tile also sets the provider, so the tools start with the tile's name: Linear's tools are `linear_…`, Stripe's are `stripe_…`. Two connectors from the same tile share their tools with an account choice, see [Tool names](/docs/connectors/custom-mcp-server/#tool-names). Sign-in works as described in [Connect an MCP server with OAuth](/docs/connectors/mcp-oauth/).
 
 ## The catalog
 

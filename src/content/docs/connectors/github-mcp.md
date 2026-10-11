@@ -19,7 +19,7 @@ These tools are for chat only. Missions do not get them.
 
 A tool keeps its own name when no other tool has that name. When a name would clash with a built-in tool or another server's tool, it gets the connector name as a prefix.
 
-When the server has more tools than the "MCP tool index threshold" in [Features](/docs/settings/features/), the agent first sees a short index and loads the tools it needs through `load_tool`. An agent gets `load_tool` once any of this connector's tools is in its "Tools allowlist".
+When the server has more tools than the "MCP tool index threshold" in [Features](/docs/settings/features/), the agent first sees a short index and loads the tools it needs through `github_load_tool`. An agent gets it once any of this connector's tools is in its "Tools allowlist". Its tools start with `github_`, such as `github_create_issue`; see [Tool names](/docs/connectors/custom-mcp-server/#tool-names).
 
 Add the tools to an agent's "Tools allowlist" before you use them. See [Agents](/docs/settings/agents/).
 
@@ -45,7 +45,7 @@ A connector named `github-mcp` stores its token as `GITHUB_MCP_TOKEN`.
 
 ## Verify
 
-A passing test shows "Connection OK, tools are servable." On the connector's page, a passing test also says how many tools are deferred behind `load_tool`, if any.
+A passing test shows "Connection OK, tools are servable." On the connector's page, a passing test also says how many tools are deferred behind the entry point, if any.
 
 ## Common errors
 
