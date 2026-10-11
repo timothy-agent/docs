@@ -44,6 +44,24 @@ Servers that only run as a local program (started with `npx` or `python`) are no
 
 Press "Test" on the connector's card. A working connector shows "Connection OK" and the number of tools the server offers.
 
+## Review the tools later
+
+Open the connector from the Connectors list. The "Tools" panel lists the tools from the last check with the server's read-only claim and a checkbox per agent. Tick or untick an agent to add the tool to, or remove it from, that agent's "Tools allowlist". Only that agent changes.
+
+Press "Re-probe" to check the server again with the stored token or OAuth session. Tools the server added since the last check are marked "new" and are not allowed anywhere yet. Tools the server removed are marked "removed" until the next check. If an OAuth session has expired, the panel asks you to reconnect.
+
+A connector added before this panel existed, or connected with OAuth, shows "Not checked yet" until the first re-probe.
+
+## Let missions read a tool
+
+Missions and automations never get an MCP connector's tools on their own. The "Missions may read" checkbox in the "Tools" panel is your review: tick a tool and missions whose agent lists it can call it, the same way they call native read tools such as mail search.
+
+Timothy does not use the server's read-only claim for this. Read the tool's description, decide whether a mission running unattended may call it, and tick only then. A mission still needs the tool on its agent's "Tools allowlist" and, to run without a prompt, on its "Approval allowlist" under [Agents](/docs/settings/agents/).
+
+The marks are bound to the tool list you reviewed. When a re-probe shows that the server changed its tools, every mark lapses: missions stop getting the tools, the panel says so, and "Confirm marks" re-applies them against the new list once you have looked at it. A tool the server removed drops out of the marks.
+
+A server whose tools sit behind the tool index (see the "Test" note about `load_tool`) cannot be marked; its tools stay in chat.
+
 ## Common errors
 
 | Message | What to do |

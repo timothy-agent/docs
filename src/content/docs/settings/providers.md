@@ -33,7 +33,7 @@ The health line reads "healthy" or "credential missing". A subscription provider
 | "OpenAI (Responses)" | GPT reasoning models via the Responses API | API key |
 | "Anthropic" | Claude models, direct API | API key or subscription token |
 | "Cursor" | Cursor CLI for coding missions | API key |
-| "AWS Bedrock" | Amazon Nova models via AWS | Access key pair |
+| "AWS Bedrock" | Amazon Nova models via AWS | Access key pair, or the cloud identity of the gateway |
 | "GLM (Z.ai)" | Zhipu's GLM models | API key |
 | "Grok (xAI)" | xAI's Grok models | API key |
 | "Ollama" | Local models, no key needed | None |
@@ -51,8 +51,9 @@ Pick a preset under "Add a provider". The form shows only the fields that preset
 | "Auth" | Anthropic only. "API key" for the metered API, or "Subscription token" for a Claude Pro or Max subscription. |
 | "API key" | The provider's key. Choose "New credential" to paste one, or "Use existing" to pick a stored one. The "Custom endpoint" preset shows "API key (optional)". For Cursor it is a plain paste field. |
 | "Credential reference" | The name the key is stored under. It follows the provider name until you edit it. |
+| "Authentication" | AWS Bedrock only. "Access keys" stores an IAM key pair. "Cloud identity" uses the AWS role attached to the gateway (EKS Pod Identity, IRSA, GKE or AKS Workload Identity, or an instance role) and stores no key. See [Identity and Bedrock](/docs/kubernetes/identity-and-bedrock/). |
 | "Region" | AWS Bedrock only. The AWS region. |
-| "Access Key ID" and "Secret Access Key" | AWS Bedrock only. The IAM user's key pair. |
+| "Access Key ID" and "Secret Access Key" | AWS Bedrock with "Access keys". The IAM user's key pair. |
 | "Base URL" | Shown for "Custom endpoint". For the other presets it sits under "Advanced: base URL". Bedrock has none. |
 | "Model" | The model to test with. It becomes the provider's default model. |
 | "Subscription token" | Anthropic with "Subscription token" auth. See below. |
@@ -85,7 +86,8 @@ extra_hosts: ["host.docker.internal:host-gateway"]
 | Field | What it does |
 |---|---|
 | "Provider name" | Renames the provider. |
-| "Credential reference" | The stored name this provider's key comes from. Pick another stored name to switch keys. |
+| "Authentication" | AWS Bedrock only. "Access keys" or "Cloud identity". Switching to "Cloud identity" drops the credential reference and hides the key panel below. |
+| "Credential reference" | The stored name this provider's key comes from. Pick another stored name to switch keys. Hidden for a Bedrock provider on "Cloud identity". |
 | "Disable reasoning" | OpenAI-compatible providers only. Turns off reasoning ("thinking") for every request to this provider. |
 | "Request timeout" | OpenAI-compatible providers only. A duration such as `20m`. Empty uses the default. |
 | "AWS region" | AWS Bedrock only. |
