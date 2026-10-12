@@ -31,6 +31,10 @@ Open an automation to see three tabs: "Settings", "Run history" and "Notes". "Ru
 
 The action today is "Mission". You fill in the same fields as a new mission: "Goal", "Kind", "Light mission", route, budget and destinations. The goal can insert data from the trigger, such as `{{event.pr_url}}`.
 
+## From chat
+
+Timothy can list, read, create, change and delete automations when you ask in chat. It works with the same fields as the "Automations" page.
+
 ## Settings most people touch
 
 - The trigger and its schedule or filter.

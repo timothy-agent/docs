@@ -24,6 +24,7 @@ A "Light mission" is a general mission done in a single pass. It skips discover,
 - "Goal": what done looks like. Type # to reference another mission, a chat or a document.
 - "Attach file": add PDFs, Markdown or text files, images or audio. Timothy reads each file once, when the mission is created. A mission takes up to eight files.
 - "Auto-approve the plan": turn it off to read and approve the plan before work starts.
+- "Model" on each phase in the plan: "Auto" uses the phase's route. Pick a model to run that phase on it. The list shows the route's models first, then every other enabled model.
 
 ## Checks and review
 
@@ -48,6 +49,10 @@ Use "Intervene" to send a note that steers a running mission.
 When a mission ends, the "Result" panel shows the outcome. The "Files" panel holds what it made, with a zip download, "Promote to KB" and, when PDF export is set up, one merged PDF of all Markdown files. Missions can also deliver to [destinations](/docs/concepts/channels-and-connectors/).
 
 A finished mission never reopens. Press "Fork" to start a follow-up. The new mission gets a summary of the old one.
+
+## From chat
+
+Ask Timothy in chat to start a mission, list your missions or read one. Starting a mission from chat always asks you to approve it first. A mission started from a channel such as Telegram sends its questions, plan approval and result back to that chat.
 
 ## Example
 

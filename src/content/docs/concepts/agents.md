@@ -17,6 +17,8 @@ Open "Settings", then "Agents". Each agent is a card with an on and off switch, 
 
 In a chat, you pick the agent that answers from the chat box. If you pick nothing, the default agent answers.
 
+The same menu, "Agent, route and model", also picks a model. "Auto" keeps the agent's route, which tries its models in order. Pick a model from the "Model" list to send your messages to that model only. Route rules, such as the tools an agent may use, still apply. The pick stays in this browser and applies to every new message until you change it.
+
 ## Settings most people touch
 
 - "Prompt overlay": your instructions for this agent. Timothy adds this text to its own system prompt. Use it for a persona, house rules or the tone you want.
