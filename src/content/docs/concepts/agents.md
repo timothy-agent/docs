@@ -3,7 +3,7 @@ title: Agents
 description: What an agent is, what it can use and how the default agent works.
 sidebar:
   order: 1
-app_path: /settings/agents
+app_path: /agents
 app_label: Agents
 ---
 
@@ -13,7 +13,7 @@ An agent is a named assistant. It has its own instructions, a route that picks i
 
 ## Where it lives
 
-Open "Settings", then "Agents". Each agent is a card with an on and off switch, a "Manage" button and a "Make default" button. Use "New agent" to add one.
+Open "Agents" in the sidebar. Each agent is a card with an on and off switch, a "Manage" button and a "Make default" button. Use "New agent" to add one.
 
 In a chat, you pick the agent that answers from the chat box. If you pick nothing, the default agent answers.
 
