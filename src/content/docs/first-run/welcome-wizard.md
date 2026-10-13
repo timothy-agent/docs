@@ -17,6 +17,7 @@ The first screen explains what Timothy does. Press "Let's start".
 
 The screen asks "Where should Timothy's model come from?" and shows these tiles, in this order:
 
+- "Free to start (OpenRouter)"
 - "Local model (Ollama)"
 - "OpenAI"
 - "Anthropic"
@@ -43,6 +44,14 @@ The next screen is called "Connect" followed by the provider name. It shows the 
 By default, Timothy encrypts the key with your master key and stores it in its database. The key never appears in logs, in the API or on screen again.
 
 Press "Test connection". Timothy sends a one-token request to the model. When it works, you see "OK", the model name and how long it took. The "Add provider" button stays off until a test passes. Then press "Add provider".
+
+### Starting free with OpenRouter
+
+Pick "Free to start (OpenRouter)" and press "Connect OpenRouter". The browser opens OpenRouter. Log in or sign up there and approve Timothy. OpenRouter creates an API key for Timothy, and Timothy stores it itself. You never paste anything. When the browser returns, the wizard goes on to the check step by itself.
+
+The free tier allows 50 requests a day, or 1000 a day after you buy 10 credits once. Paid models on the same account cost money. Already have a key? Press "I have a key, paste it instead" and the form becomes the plain key form above.
+
+The connect flow needs `TIMOTHY_PUBLIC_URL` set, because OpenRouter redirects back to Timothy's public address. Without it, pressing "Connect OpenRouter" shows an error naming the setting.
 
 ### Using a local model with Ollama
 

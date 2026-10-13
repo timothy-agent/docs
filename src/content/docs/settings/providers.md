@@ -29,6 +29,7 @@ The health line reads "healthy" or "credential missing". A subscription provider
 
 | Preset | Description in the app | Key |
 |---|---|---|
+| "OpenRouter" | Free models to start, one login | Login, or API key |
 | "OpenAI" | GPT and o-series models | API key |
 | "OpenAI (Responses)" | GPT reasoning models via the Responses API | API key |
 | "Anthropic" | Claude models, direct API | API key or subscription token |
@@ -60,6 +61,16 @@ Pick a preset under "Add a provider". The form shows only the fields that preset
 | "Default model" | Anthropic subscription and Cursor. The model the CLI runs when a route does not name one. |
 
 Press "Test connection". Timothy sends a one-token completion with your settings. A pass reads "OK," followed by the model and the time it took. A failure reads "Failed after" followed by the time and the reason. "Add provider" stays disabled until a test passes. Any edit after a passing test locks it again.
+
+### OpenRouter
+
+The OpenRouter preset skips the key field. Press "Connect OpenRouter" and the browser opens OpenRouter. Log in or sign up there and approve Timothy. OpenRouter creates an API key for Timothy and sends the browser back. Timothy stores the key itself, so you never paste anything. You land on the providers list with "is connected and ready to chat."
+
+The connect flow needs `TIMOTHY_PUBLIC_URL` set, because OpenRouter redirects back to Timothy's public address. Without it, pressing "Connect OpenRouter" shows an error naming the setting.
+
+The panel also states the limits: free models cost nothing up to 50 requests a day, or 1000 a day after you buy 10 credits once. Paid models on the same account use your OpenRouter credits. Your OpenRouter privacy settings decide whether free models may train on your prompts.
+
+Already have a key? Press "I have a key, paste it instead" and the preset turns into the plain form above, with the key hint and a link to openrouter.ai/keys.
 
 ### Anthropic subscription token
 
