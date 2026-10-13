@@ -11,10 +11,12 @@ Settings is where you connect models, accounts and messaging apps, and where you
 
 - [Providers](/docs/settings/providers/)
 - [Connectors](/docs/settings/connectors/)
-- [Agents](/docs/settings/agents/)
 - [Routing](/docs/settings/routing/)
-- [Secrets](/docs/settings/secrets/)
-- [Credentials](/docs/settings/credentials/)
 - [Destinations](/docs/settings/destinations/)
 - [Channels](/docs/settings/channels/)
+- [Memory](/docs/concepts/memory/)
 - [Features](/docs/settings/features/)
+- [Secrets](/docs/settings/secrets/)
+- [Credentials](/docs/settings/credentials/)
+
+Agents moved to the main sidebar. See [Agents](/docs/concepts/agents/).
