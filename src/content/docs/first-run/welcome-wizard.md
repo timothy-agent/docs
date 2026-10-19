@@ -23,6 +23,8 @@ The screen asks "Where should Timothy's model come from?" and shows these tiles,
 - "Anthropic"
 - "GLM (Z.ai)"
 - "Grok (xAI)"
+- "DeepSeek"
+- "Nebius"
 - "AWS Bedrock"
 - "Cursor"
 - "Custom endpoint"

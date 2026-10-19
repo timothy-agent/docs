@@ -37,6 +37,8 @@ The health line reads "healthy" or "credential missing". A subscription provider
 | "AWS Bedrock" | Amazon Nova models via AWS | Access key pair, or the cloud identity of the gateway |
 | "GLM (Z.ai)" | Zhipu's GLM models | API key |
 | "Grok (xAI)" | xAI's Grok models | API key |
+| "DeepSeek" | DeepSeek's own API | API key |
+| "Nebius" | Open models on Nebius Token Factory | API key |
 | "Ollama" | Local models, no key needed | None |
 | "Custom endpoint" | Any OpenAI-compatible URL | Optional |
 
