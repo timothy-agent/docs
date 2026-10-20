@@ -25,6 +25,8 @@ After the install, these services run on your machine:
 | pdfgen | Makes PDFs: a chat answer, a mission result, or any document Timothy writes. |
 | whisper | Local speech to text for the microphone button. It is off unless you turn it on. |
 
+The quick start runs a light core: brain, gateway, memoryd, sandboxd and web. The searxng, markitdown, ocr, pdfgen and whisper services start only when you turn on their profile in `.env`. See [Quick start](/docs/install/quick-start/#optional-services).
+
 A PostgreSQL database holds all data. It has no port on your machine. Only two ports are open to you: 3300 for the web interface and 8300 for the API.
 
 ## Two ways to install

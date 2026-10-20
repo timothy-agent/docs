@@ -1,54 +1,48 @@
 ---
 title: Sign in
-description: Sign in to the Timothy web interface with your token link, and what to do if you lose it.
+description: Create your account on first visit, sign in later, and reset your password if you lose it.
 sidebar:
   order: 1
 assistant: false
 ---
 
-Timothy has no user name and no password page. The web interface signs in with one API token. That token is the `TIMOTHY_API_TOKEN` value in your `.env` file.
+Timothy has its own accounts. The first time you open the web interface, you create the administrator account. After that, you sign in with a user name or email and a password.
 
-## The token link
+## Create your account
 
-The quick start installer prints a sign-in link when it finishes:
+Open `http://localhost:3300/` in your browser. If Timothy runs on another machine, use that machine's address. If you changed `WEB_PORT`, use that port.
 
-```text
-http://localhost:3300/#token=<your API token>
-```
+On a fresh install, the page is called "Initial Setup". It says "Create your primary administrator account to secure your Timothy assistant." Fill in the form:
 
-Open it in your browser. The web interface reads the token from the part after `#token=`, stores it in the browser and removes it from the address bar. Then it loads Home. On a fresh install, Home sends you on to the [welcome wizard](/docs/first-run/welcome-wizard/).
+- "Username": the name you sign in with. It starts as `admin`.
+- "Email address": used for account recovery and admin notifications.
+- "Password": at least 8 characters.
+- "Confirm Password": the same password again.
 
-If Timothy runs on another machine, replace `localhost` with that machine's address.
+Press "Complete Setup & Sign In". You land on Home. On a fresh install, Home sends you on to the [welcome wizard](/docs/first-run/welcome-wizard/).
 
-The link holds your token. Treat it like a password and do not share it.
+An install that you upgrade from an older release also shows "Initial Setup" on the first visit, because it has no account yet.
 
-## Where the token is kept
+## Sign in later
 
-The browser keeps the token in its local storage for this site. You stay signed in until you clear the site data or use another browser. Each new browser or device needs the link once.
+When an account exists and you are not signed in, Timothy shows "Sign In". Enter your "Username or Email" and your "Password", then press "Sign In".
 
-Your setup progress, such as the wizard and the checklist, is stored on the server. It follows you to any browser.
+Your login lasts 7 days. When it ends, Timothy says "Your login session expired. Sign in again to continue." and you sign in again. To sign out sooner, press "Sign out" at the bottom of the sidebar.
 
-## If you lose the link
+The session cookie is marked secure. Browsers accept it over https and on `http://localhost`. If you open Timothy over plain http on another address and sign in does not stick, use `localhost` or put a reverse proxy with https in front of Timothy.
 
-The token does not change, so you can build the link again from your `.env` file. Run this on the Timothy host. For a quick start install:
+## If you forget your password
 
-```sh
-cd ~/timothy
-echo "http://localhost:3300/#token=$(sed -n 's/^TIMOTHY_API_TOKEN=//p' .env)"
-```
-
-For a source build, from the repository folder:
+Press "Forgot password?" on the "Sign In" page. The "Reset Password" page shows a command to run on the machine that hosts Timothy. From the install folder, it looks like this:
 
 ```sh
-echo "http://localhost:3300/#token=$(sed -n 's/^TIMOTHY_API_TOKEN=//p' deploy/.env)"
+docker compose exec brain /app -reset-password <email>
 ```
 
-The command prints the link in your own terminal. Open it in your browser. If you changed `WEB_PORT`, use that port instead of 3300.
+Use the email of your account. The command prints a recovery token. The token works for 15 minutes. Paste it into "Recovery Token", enter a "New Password" and "Confirm New Password", then press "Reset Password". Press "Back to Sign In" and sign in with the new password.
 
-## If the token is missing or wrong
+## The API token
 
-When the browser has no token, or the token is wrong, the web interface opens a dialog called "Settings" with an "API token" field. A message says "Timothy's API token is missing or invalid". The token link above is the easiest fix.
+Scripts and tools can still use the API token. It is the `TIMOTHY_API_TOKEN` value in your `.env` file, and a script sends it as a bearer token. You do not need it to use the web interface.
 
-You can open the same dialog at any time from "API token" at the bottom of the sidebar.
-
-The API token is not a model provider key. Provider keys go in the welcome wizard or in "Settings", then "Providers".
+The "API token" entry at the bottom of the sidebar opens a dialog where you can paste the token into the browser. The API token is not a model provider key. Provider keys go in the welcome wizard or in "Settings", then "Providers".

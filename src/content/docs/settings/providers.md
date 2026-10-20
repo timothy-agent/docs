@@ -20,10 +20,10 @@ Each provider card shows its health, its default model and these controls:
 | Control | What it does |
 |---|---|
 | Switch | Turns the provider on or off. |
-| "Test" | Sends a one-token completion to the provider. Not shown for subscription providers. |
+| "Test" | Sends a one-token completion to the provider. Not shown for Cursor. |
 | "Manage" | Opens the provider's page. |
 
-The health line reads "healthy" or "credential missing". A subscription provider reads "subscription" followed by "healthy" or "auth failed".
+The health line reads "healthy" or "credential missing". A subscription provider reads "subscription" followed by "healthy", "ready" or "login required". A Cursor provider reads "subscription" followed by "healthy" or "auth failed".
 
 ## Presets
 
@@ -31,8 +31,9 @@ The health line reads "healthy" or "credential missing". A subscription provider
 |---|---|---|
 | "OpenRouter" | Free models to start, one login | Login, or API key |
 | "OpenAI" | GPT and o-series models | API key |
-| "OpenAI (Responses)" | GPT reasoning models via the Responses API | API key |
-| "Anthropic" | Claude models, direct API | API key or subscription token |
+| "OpenAI Subscription" | ChatGPT Plus or Pro, via local proxy | Browser login |
+| "Anthropic" | Claude models, direct API | API key |
+| "Claude Subscription" | Claude Pro/Team via local proxy | Browser login |
 | "Cursor" | Cursor CLI for coding missions | API key |
 | "AWS Bedrock" | Amazon Nova models via AWS | Access key pair, or the cloud identity of the gateway |
 | "GLM (Z.ai)" | Zhipu's GLM models | API key |
@@ -40,6 +41,7 @@ The health line reads "healthy" or "credential missing". A subscription provider
 | "DeepSeek" | DeepSeek's own API | API key |
 | "Nebius" | Open models on Nebius Token Factory | API key |
 | "Ollama" | Local models, no key needed | None |
+| "TypeSafe Jev" | Hosted decision model for fast routing | API key |
 | "Custom endpoint" | Any OpenAI-compatible URL | Optional |
 
 Most key presets show a hint and a link to the provider's key page next to the key field.
@@ -51,16 +53,14 @@ Pick a preset under "Add a provider". The form shows only the fields that preset
 | Field | What it does |
 |---|---|
 | "Name (unique)" | The provider's name. |
-| "Auth" | Anthropic only. "API key" for the metered API, or "Subscription token" for a Claude Pro or Max subscription. |
 | "API key" | The provider's key. Choose "New credential" to paste one, or "Use existing" to pick a stored one. The "Custom endpoint" preset shows "API key (optional)". For Cursor it is a plain paste field. |
 | "Credential reference" | The name the key is stored under. It follows the provider name until you edit it. |
 | "Authentication" | AWS Bedrock only. "Access keys" stores an IAM key pair. "Cloud identity" uses the AWS role attached to the gateway (EKS Pod Identity, IRSA, GKE or AKS Workload Identity, or an instance role) and stores no key. See [Identity and Bedrock](/docs/kubernetes/identity-and-bedrock/). |
 | "Region" | AWS Bedrock only. The AWS region. |
 | "Access Key ID" and "Secret Access Key" | AWS Bedrock with "Access keys". The IAM user's key pair. |
 | "Base URL" | Shown for "Custom endpoint". For the other presets it sits under "Advanced: base URL". Bedrock has none. |
-| "Model" | The model to test with. It becomes the provider's default model. |
-| "Subscription token" | Anthropic with "Subscription token" auth. See below. |
-| "Default model" | Anthropic subscription and Cursor. The model the CLI runs when a route does not name one. |
+| "Model" | The model to test with. It becomes the provider's default model. After a passing test, the picker offers the models the provider lists. "TypeSafe Jev" is tested with a decision probe instead of a one-token completion. |
+| "Default model" | Cursor. The model the CLI runs when a route does not name one. |
 
 Press "Test connection". Timothy sends a one-token completion with your settings. A pass reads "OK," followed by the model and the time it took. A failure reads "Failed after" followed by the time and the reason. "Add provider" stays disabled until a test passes. Any edit after a passing test locks it again.
 
@@ -74,15 +74,19 @@ The panel also states the limits: free models cost nothing up to 50 requests a d
 
 Already have a key? Press "I have a key, paste it instead" and the preset turns into the plain form above, with the key hint and a link to openrouter.ai/keys.
 
-### Anthropic subscription token
+### OpenAI Subscription and Claude Subscription
 
-Choose "Subscription token" under "Auth" to use a Claude Pro or Max subscription. On any machine with Claude Code installed, run the command below, approve in the browser and paste the token it prints. The token starts with `sk-ant-oat` and lasts about a year.
+These presets use a ChatGPT Plus or Pro plan, or a Claude Pro or Team plan, instead of an API key. Timothy sends the requests through CLIProxyAPI, a helper service inside Timothy's Docker network on port 8317. Calls cost $0.00 on the ledger, because you pay a flat fee.
 
-```sh
-claude setup-token
-```
+Press "Sign in with OpenAI" or "Sign in with Claude". A browser tab opens on the vendor's login page. Approve the access there. Timothy waits, then adds the provider by itself and says it is ready to use.
 
-Subscription and Cursor providers have no connection test. The form says "CLI providers have no connection test." and "Add provider" works right away. These providers serve coding missions through a CLI harness.
+If the browser says "Unable to connect" to localhost after you log in, Timothy runs on another machine. Under "Running on a remote server or headless host?", paste the full address from the browser's address bar and press "Submit". Press "Cancel" to stop. "Configure endpoint manually" turns the preset into the plain form.
+
+On the provider's page, the "Subscription authentication" panel has "Re-authenticate with OpenAI" or "Re-authenticate with Claude" for when the login expires. These providers have no key panel.
+
+### Cursor
+
+Cursor serves coding missions through a CLI harness. It has no connection test. The form says "CLI providers have no connection test." and "Add provider" works right away.
 
 ### Ollama
 
@@ -100,12 +104,18 @@ extra_hosts: ["host.docker.internal:host-gateway"]
 |---|---|
 | "Provider name" | Renames the provider. |
 | "Authentication" | AWS Bedrock only. "Access keys" or "Cloud identity". Switching to "Cloud identity" drops the credential reference and hides the key panel below. |
-| "Credential reference" | The stored name this provider's key comes from. Pick another stored name to switch keys. Hidden for a Bedrock provider on "Cloud identity". |
+| "Credential reference" | The stored name this provider's key comes from. Pick another stored name to switch keys. Hidden for a Bedrock provider on "Cloud identity" and for the subscription presets. |
+| "AWS region" | AWS Bedrock only. |
+| "Default model" | Used when a route entry for this provider names no model. |
+
+OpenAI-compatible providers, and any provider with a stored base URL, also have a fold called "Advanced". It opens by itself when one of its fields holds a value other than the default.
+
+| Field in "Advanced" | What it does |
+|---|---|
 | "Disable reasoning" | OpenAI-compatible providers only. Turns off reasoning ("thinking") for every request to this provider. |
 | "Request timeout" | OpenAI-compatible providers only. A duration such as `20m`. Empty uses the default. |
-| "AWS region" | AWS Bedrock only. |
-| "LiteLLM provider" | Which section of the model catalog this provider's prices come from. Empty works it out from the driver and base URL. Not shown for subscription providers. |
-| "Default model" | Used when a route entry for this provider names no model. |
+| "LiteLLM provider" | Which section of the model catalog this provider's prices come from. Empty works it out from the driver and base URL. Shown for "Custom endpoint", or when a value is set. Not shown for Anthropic, AWS Bedrock or the subscription presets. |
+| "Base URL" | Read only. It was set when you added the provider. To use another address, add the provider again. |
 
 Press "Save" to keep changes or "Cancel" to drop them.
 
@@ -113,7 +123,17 @@ Below the form:
 
 | Item | What it does |
 |---|---|
-| "API key", "AWS credentials" or "Subscription token" panel | Shows "stored" with the store, or "not set". Paste a new value and press "Save" to rotate the key under the same name. |
-| "Test connection" | Runs the one-token test again. Subscription providers show their health from the last harness run instead. |
-| "Models" | Every catalog model this provider can serve, with context size and price. Filter by model id. You choose which model runs in [Routing](/docs/settings/routing/). |
-| "Delete" | Removes the provider and its models. Timothy refuses while an enabled route still points at it. |
+| "API key", "AWS credentials", "Subscription token" or "Subscription authentication" panel | Shows "stored" with the store, or "not set". Paste a new value and press "Save" to rotate the key under the same name. "Subscription token" appears for a provider that runs the Claude Code CLI. "Subscription authentication" appears for the two subscription presets and has the re-authenticate button. |
+| "Test connection" | Runs the one-token test again. Cursor shows its health from the last harness run instead. |
+| "Models" | The models this provider can serve. See below. Not shown for Cursor. |
+| "Delete" | In the page header. Removes the provider and its models. Timothy refuses while an enabled route still points at it. |
+
+### Models and prices
+
+The panel is titled "Models your key can use" followed by a count when the provider lists its models itself. The list shows the provider's live model ids, with prices from the model catalog where known. A provider that cannot list its models gets "Models from catalog" instead. Filter the table with "filter by model id...". You choose which model runs in [Routing](/docs/settings/routing/).
+
+Each row shows the model id, its context size and its price per million tokens. A badge names the price source, for example "operator", or "unknown" when no price is known. Timothy records an unknown price as unknown and never guesses.
+
+To set a price, press "Edit" on a row. Fill in "Input $ / MTok" and "Output $ / MTok", then press "Save price". "Clear price" removes your price. "Add price" does the same for a model id that is not in the list, and it asks for the "Model id".
+
+"Mark listed models free" sets a price of $0 for every listed model that has no price of yours. Use it for a provider you pay a flat fee for. The app asks "Mark listed models free?" first. Clear a model's price to undo it.

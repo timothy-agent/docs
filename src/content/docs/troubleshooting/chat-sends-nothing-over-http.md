@@ -18,4 +18,4 @@ If you cannot upgrade yet, use one of these:
 - Open Timothy at `http://localhost:3300` on the machine that runs it.
 - Put a reverse proxy in front of Timothy that serves it over https.
 
-The https option is a good idea anyway when you reach Timothy from other machines. Over plain http, anyone on the network path can read your API token, because the browser sends it with every request.
+The https option is a good idea anyway when you reach Timothy from other machines. Over plain http, anyone on the network path can read your login cookie, because the browser sends it with every request.

@@ -95,20 +95,13 @@ kubectl -n timothy describe pod <name>
 
 ### 5. Sign in
 
-The web interface signs in with the API token. Read it from the Secret:
-
-```sh
-kubectl -n timothy get secret timothy-secrets \
-  -o jsonpath='{.data.TIMOTHY_API_TOKEN}' | base64 -d; echo
-```
-
-Open `https://timothy.example.com/#token=<your API token>` in your browser. Without an Ingress, forward the web port to your machine and open `http://localhost:3300/#token=<your API token>`:
+Open `https://timothy.example.com/` in your browser. Without an Ingress, forward the web port to your machine and open `http://localhost:3300/`:
 
 ```sh
 kubectl -n timothy port-forward svc/timothy-web 3300:8080
 ```
 
-The link contains your API token. Treat it like a password.
+The first visit asks you to create the administrator account. See [Sign in](/docs/first-run/sign-in/). The API token in the Secret is for scripts and tools that call the API.
 
 ## Next: First run
 

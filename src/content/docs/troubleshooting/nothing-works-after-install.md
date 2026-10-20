@@ -9,15 +9,21 @@ A fresh install has no model provider. Until you add one, Timothy cannot answer.
 
 The welcome wizard sets up your first provider for you. If you skipped it, open the "Help" menu and choose "Restart welcome".
 
+## "Your login session expired. Sign in again to continue."
+
+**What you see:** This message appears when Timothy loads data or tests a provider. The "Sign In" page opens.
+
+**Why:** Your login ended. A login lasts 7 days, and signing out ends it at once.
+
+**Fix:** Sign in with your user name or email and your password. If you forgot the password, see [Sign in](/docs/first-run/sign-in/).
+
 ## "Timothy's API token is missing or invalid."
 
-**What you see:** This message appears when Timothy loads data or tests a provider. Or a dialog called "Settings" opens and asks for an "API token".
+**What you see:** This message appears when a script or tool calls the API, or when a dialog called "Settings" opens and asks for an "API token".
 
-**Why:** The browser has no API token for your Timothy, or it has the wrong one. This token is Timothy's own token. It is not the key of a model provider.
+**Why:** The request has no API token, or the wrong one. This token is Timothy's own token. It is not the key of a model provider.
 
-**Fix:** Open the sign-in link that the installer printed at the end. It signs the browser in for you.
-
-If you no longer have the link, click "API token" in the sidebar. Paste the value of `TIMOTHY_API_TOKEN` from the `.env` file of your install and click "Save". For a quick start install, that file is in the install folder, which is `~/timothy` by default. For a source build, it is `deploy/.env` in the repository.
+**Fix:** Paste the value of `TIMOTHY_API_TOKEN` from the `.env` file of your install into the dialog and click "Save". For a quick start install, that file is in the install folder, which is `~/timothy` by default. For a source build, it is `deploy/.env` in the repository. To use the web interface, sign in with your account instead.
 
 ## "Timothy has no model for chat yet"
 

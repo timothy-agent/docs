@@ -37,7 +37,7 @@ Timothy opens two ports on your machine:
 | 3300 | Web interface |
 | 8300 | API |
 
-Both ports serve plain HTTP. Use them on a network you trust. If you open Timothy to the internet, put a reverse proxy with TLS in front of it. The API token travels with every request, and plain HTTP lets anyone on the path read it.
+Both ports serve plain HTTP. Use them on a network you trust. If you open Timothy to the internet, put a reverse proxy with TLS in front of it. Your login cookie and any API token travel with every request, and plain HTTP lets anyone on the path read them.
 
 ## Memory, CPU and disk
 
@@ -47,6 +47,8 @@ Timothy has no published minimum. These limits come from the compose file and he
 - The markitdown, pdfgen and ocr services are each capped at 2 GB of memory and 2 CPUs.
 - Each running mission gets its own container, capped at 2 GB of memory and 2 CPUs.
 - The optional whisper service is capped at 6 GB of memory. Its model holds about 3 GB even when idle.
+
+The searxng, markitdown, pdfgen, ocr and whisper services run only when you turn on their Compose profile. Without a profile, the core stack needs roughly 300 to 500 MiB of memory.
 
 These are upper limits, not what the services use all the time. Plan more memory if you run several missions at once.
 
