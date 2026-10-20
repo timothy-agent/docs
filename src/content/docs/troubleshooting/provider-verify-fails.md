@@ -84,7 +84,7 @@ If the provider is always slow, set a longer timeout. Open Settings, then Provid
 
 ## "Timothy's API token is missing or invalid."
 
-This is not a provider problem. The browser is not signed in to Timothy. See [Nothing works after install](/docs/troubleshooting/nothing-works-after-install/).
+This is not a provider problem. The request is not signed in to Timothy. See [Nothing works after install](/docs/troubleshooting/nothing-works-after-install/).
 
 ## Ollama
 

@@ -29,16 +29,16 @@ The screen asks "Where should Timothy's model come from?" and shows these tiles,
 - "Cursor"
 - "Custom endpoint"
 
-Pick one. You can add more providers later in "Settings", then "Providers". The Settings page also offers "OpenAI (Responses)", which the wizard does not show.
+Pick one. You can add more providers later in "Settings", then "Providers". The Settings page also offers "OpenAI Subscription", "Claude Subscription" and "TypeSafe Jev", which the wizard does not show.
 
-"Cursor", and "Anthropic" with a subscription token, are made for coding missions. They do not give chat a model. For your first provider, pick one that serves chat.
+"Cursor" is made for coding missions. It does not give chat a model. For your first provider, pick one that serves chat.
 
 ## Connect the provider
 
 The next screen is called "Connect" followed by the provider name. It shows the provider form:
 
 - "Name (unique)": a name for this provider. The preset fills one in.
-- "API key": the key from your provider account. The form links to the page where you create one. "AWS Bedrock" asks for an access key pair and a "Region" instead. "Anthropic" first asks you to pick an "Auth" mode: "API key" or "Subscription token".
+- "API key": the key from your provider account. The form links to the page where you create one. "AWS Bedrock" asks for an access key pair and a "Region" instead.
 - "Credential reference": the name Timothy stores the key under. The form fills it in.
 - "Model": the model to test. It becomes this provider's default model. The preset suggests one.
 - "Advanced: base URL": open it only if your provider needs a different address.

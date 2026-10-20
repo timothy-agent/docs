@@ -103,4 +103,4 @@ Include:
 - What you saw. Copy the exact message from the app.
 - The log lines from the service that failed, from just before the problem.
 
-Never include your API token, a provider key, a connector token, the sign-in link from the installer or anything from your `.env` file. Read log lines before you post them and remove anything that looks like a key.
+Never include your API token, a provider key, a connector token, a recovery token, your password or anything from your `.env` file. Read log lines before you post them and remove anything that looks like a key.

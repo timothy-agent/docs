@@ -68,9 +68,7 @@ The first run builds every image, so it takes a while. When it is done, the web 
 
 ## 6. Sign in
 
-There is no login page. The first time the web interface has no token, it opens a dialog called "Settings" with an "API token" field. Enter the `TIMOTHY_API_TOKEN` value from `deploy/.env` and press "Save". The browser keeps the token.
-
-You can also sign in with a token link, the same way the quick start does. See [Sign in](/docs/first-run/sign-in/).
+Open `http://localhost:3300`. The first visit asks you to create the administrator account. See [Sign in](/docs/first-run/sign-in/).
 
 ## Operate the stack
 

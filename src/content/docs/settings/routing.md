@@ -11,7 +11,7 @@ A route is a named chain of providers and models. When a job uses a route, Timot
 
 ## System roles
 
-The "System roles" panel binds one route to each job Timothy needs. The app says: "Timothy needs one route bound to each of these 4 roles to work. A newly connected provider fills in whichever are still unbound."
+The "System roles" panel binds one route to each job Timothy needs. The app says: "Timothy needs routes bound to the four core roles to work; decide is optional. A newly connected provider fills in whichever are still unbound."
 
 | Role | What it is for |
 |---|---|
@@ -19,6 +19,7 @@ The "System roles" panel binds one route to each job Timothy needs. The app says
 | "Embeddings" | Turning text into vectors for memory and knowledge search. |
 | "Vision" | Requests that carry images. |
 | "Summarize" | Summaries. |
+| "Decide" | Optional. Quick choices, such as which agent answers, which route an Auto chat uses and what kind a new mission is. Bind it to a route whose chain holds a decision model, such as a "TypeSafe Jev" provider, or a fast chat model. |
 
 Each role has a menu of your routes. A role with no route shows "Unbound".
 
@@ -29,7 +30,7 @@ To add a route, fill these fields and press "Add route":
 | Field | What it does |
 |---|---|
 | "New route name" | The route's name. |
-| "Capability" | What the route serves: `chat`, `embeddings` or `vision`. Every provider in the chain must support it. |
+| "Capability" | What the route serves: `chat`, `embeddings`, `vision` or `decide`. Every provider in the chain must support it. |
 
 Each route card shows its role, if it has one, and its strategy. It also shows which provider and model is serving now, and the chain in order. The serving line reads "serving" with the provider and model, "disabled", or "no usable provider".
 

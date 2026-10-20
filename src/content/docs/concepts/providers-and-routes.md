@@ -13,14 +13,15 @@ A provider is a connection to a model vendor, such as OpenAI or a local Ollama. 
 
 ## Where it lives
 
-Providers are under "Settings", then "Providers". The presets are "OpenAI", "OpenAI (Responses)", "Anthropic", "Cursor", "AWS Bedrock", "GLM (Z.ai)", "Grok (xAI)", "DeepSeek", "Nebius", "Ollama" and "Custom endpoint". "Custom endpoint" takes any OpenAI-compatible URL. When you add a provider, Timothy tests it with a one-token call to the model you chose.
+Providers are under "Settings", then "Providers". The presets are "OpenRouter", "OpenAI", "OpenAI Subscription", "Anthropic", "Claude Subscription", "Cursor", "AWS Bedrock", "GLM (Z.ai)", "Grok (xAI)", "DeepSeek", "Nebius", "Ollama", "TypeSafe Jev" and "Custom endpoint". "Custom endpoint" takes any OpenAI-compatible URL. When you add a provider, Timothy tests it with a one-token call to the model you chose.
 
-Routes are under "Settings", then "Routing". The "System roles" panel has four roles, and Timothy needs a route bound to each one:
+Routes are under "Settings", then "Routing". The "System roles" panel has five roles. Timothy needs a route bound to the first four. The fifth is optional:
 
 - "Chat (default)": answers chats.
 - "Embeddings": turns documents into search vectors for knowledge.
 - "Vision": looks at images.
 - "Summarize": background jobs such as shortening long chat history.
+- "Decide": quick choices, such as which agent answers, which route an Auto chat uses and what kind a new mission is. It is optional. Without it, Timothy falls back to a regular chat model, or to the default route.
 
 A new provider fills in any role that is still "Unbound". "Your routes" lists every route. "Add route" makes your own, which you can then pick on an agent.
 
